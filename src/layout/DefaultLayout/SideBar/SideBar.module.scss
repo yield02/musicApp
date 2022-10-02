@@ -1,0 +1,8 @@
+.nav_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: calc(100vh - var(--playerControls-height));
+    width: var(--nav-width);
+    background: var(--sidebar-popup-bg);
+}

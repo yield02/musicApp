@@ -1,0 +1,9 @@
+.header-container {
+    position: fixed;
+    width: calc(100% - var(--nav-width));
+    top: 0;
+    right: 0;
+    p {
+        margin: 0;
+    }
+}

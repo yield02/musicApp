@@ -1,11 +1,22 @@
 @import url('normalize.css');
 
 :root {
-    --primary-color: transparent;
+    --primary-bg: #274a78;
+    --layout-bg: #1d375a;
+    --sidebar-popup-bg: #2a4162;
+    --alpha-layout-bg: rgba(29, 55, 90, 0.8);
+    --queue-player-popup-bg: #0b274c;
+    --blur-queue-bg: rgba(29, 55, 90, 0.9019607843137255);
+    --chart-bg-img-alpha: rgba(29, 55, 90, 0.9);
+    --linear-gradient-bg: linear-gradient(180deg, #224472, #244572);
+    --nav-width: 240px;
+    --playerControls-height: 90px;
 }
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
