@@ -1,6 +1,6 @@
-import Header from './Header';
-import PlayerControls from './PlayerControls';
-import SideBar from './SideBar';
+import Header from './components/Header';
+import PlayerControls from './components/PlayerControls';
+import SideBar from './components/SideBar';
 import styles from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 

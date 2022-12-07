@@ -3,14 +3,20 @@
 :root {
     --primary-bg: #274a78;
     --layout-bg: #1d375a;
+    --alpha-bg: hsla(0, 0%, 100%, 0.1);
     --sidebar-popup-bg: #2a4162;
     --alpha-layout-bg: rgba(29, 55, 90, 0.8);
     --queue-player-popup-bg: #0b274c;
     --blur-queue-bg: rgba(29, 55, 90, 0.9019607843137255);
     --chart-bg-img-alpha: rgba(29, 55, 90, 0.9);
     --linear-gradient-bg: linear-gradient(180deg, #224472, #244572);
+    --while: #ffff;
+    --text-primary: #fff;
+    --text-secondary: hsla(0, 0%, 100%, 0.5);
+    --search-text: #eee;
     --nav-width: 240px;
     --playerControls-height: 90px;
+    --font-style: 'mp3Font', sans-serif;
 }
 
 * {
@@ -21,4 +27,26 @@
 
 html {
     font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-style);
+}
+
+@font-face {
+    font-family: 'mp3Font';
+    src: url('../../assets/fonts/mp3regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'mp3Font';
+    src: url('../../assets/fonts/mp3semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'mp3Font';
+    src: url('../../assets/fonts/mp3bold.woff2');
+    font-weight: 700;
 }

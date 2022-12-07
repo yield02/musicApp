@@ -1,0 +1,38 @@
+.wrapper {
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 17px;
+    color: var(--while);
+    font-size: 1.8rem;
+    font-family: var(--font-style);
+    transition: all 0.1s ease;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.primary {
+    border-radius: 999px;
+    font-weight: 400;
+    text-transform: none;
+    line-height: normal;
+}
+
+.round {
+    padding: 9px 9px;
+    background: var(--alpha-bg);
+    border-radius: 50%;
+    :hover {
+        filter: brightness(0.9);
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.3;
+    cursor: none;
+}
