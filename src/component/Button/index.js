@@ -10,8 +10,9 @@ const Button = forwardRef(
         {
             children,
             onClick,
-            LeftIcon,
-            RightIcon,
+            leftIcon,
+            rightIcon,
+            subtitle,
             className,
             disabled = false,
             primary = false,
@@ -48,11 +49,33 @@ const Button = forwardRef(
             round,
             disabled,
         });
+
+        // console.log(rightIcon)
         return (
             <Comp className={classes} {...props} ref={ref}>
-                {LeftIcon && <span className={cx('icons')}>{LeftIcon}</span>}
-                {children}
-                {RightIcon && <span className={cx('icons')}>{RightIcon}</span>}
+                {leftIcon && !subtitle && <span className={cx('Icon', { leftIcon: !!children })}>{leftIcon}</span>}
+                {children && !subtitle && <span className={cx('children')}>{children}</span>}
+                {rightIcon && !subtitle && (
+                    <span className={(cx('Icon'), { leftIcon: !!children })}>
+                        {rightIcon === 'switchIcon' ? (
+                            <label className={cx('switch')}>
+                                <input type="checkbox" />
+                                <span className={cx('slider', 'round')}></span>
+                            </label>
+                        ) : (
+                            rightIcon
+                        )}
+                    </span>
+                )}
+                {rightIcon && subtitle && !leftIcon && (
+                    <div className={cx('flex-box')}>
+                        <div className={cx('left')}>
+                            <h4 className={cx('title')}>{children}</h4>
+                            <span className={cx('sub-title')}>{subtitle}</span>
+                        </div>
+                        <div className={cx('right')}>{rightIcon}</div>
+                    </div>
+                )}
             </Comp>
         );
     },

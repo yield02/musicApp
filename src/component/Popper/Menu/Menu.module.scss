@@ -1,0 +1,22 @@
+.menu-popper {
+    background: var(--primary-bg);
+    width: 240px;
+}
+
+.last-container {
+    border-top: 1px solid var(--border-primary);
+    padding-top: 12px;
+}
+
+.btn {
+    width: 100%;
+    font-size: 1.4rem;
+    justify-content: flex-start;
+    color: #dadada;
+    height: auto;
+    padding: 12px 20px 12px 17px;
+    &:hover {
+        background-color: var(--alpha-bg);
+        color: var(--text-item-hover);
+    }
+}
