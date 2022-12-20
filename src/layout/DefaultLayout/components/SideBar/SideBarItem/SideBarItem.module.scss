@@ -1,0 +1,6 @@
+.SideBarItem {
+    &.active {
+        background-color: var(--alpha-bg);
+        color: var(--text-item-hover);
+    }
+}

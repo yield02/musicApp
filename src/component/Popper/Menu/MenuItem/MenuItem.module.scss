@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+    &.active {
+        border-left: 3px solid var(--purple-primary);
+        background-color: var(--alpha-bg);
+        color: var(--text-item-hover);
+    }
+    &.borderTop {
+        border-top: 1px solid var(--border-primary);
+        padding-top: 12px;
+        margin-top: 12px;
+    }
+}

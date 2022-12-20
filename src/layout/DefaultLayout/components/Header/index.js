@@ -1,7 +1,11 @@
-import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
 import Search from '~/layout/DefaultLayout/components/Search';
 import Button from '~/component/Button';
+import Image from '~/component/Image';
+import Menu from '~/component/Popper/Menu';
+import styles from './Header.module.scss';
+
+import classNames from 'classnames/bind';
+import { ClothesIconColor } from '~/component/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faArrowRightFromBracket,
@@ -18,13 +22,10 @@ import {
     faPhone,
     faRectangleAd,
     faShieldHalved,
-    faShirt,
     faSquareH,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import Image from '~/component/Image';
-import Menu from '~/component/Popper/Menu';
 
 const settingItem = [
     {
@@ -124,7 +125,7 @@ function Header() {
             </div>
             <div className={cx('right_container')}>
                 <Tippy content="Chủ đề" placement="bottom">
-                    <Button className={cx('action-btn')} round leftIcon={<FontAwesomeIcon icon={faShirt} />} />
+                    <Button className={cx('action-btn')} round leftIcon={<ClothesIconColor></ClothesIconColor>} />
                 </Tippy>
                 <Tippy content="Nâng cấp vip" placement="bottom">
                     <Button className={cx('action-btn')} round leftIcon={<FontAwesomeIcon icon={faGem} />}></Button>

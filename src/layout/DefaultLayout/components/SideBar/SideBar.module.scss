@@ -1,8 +1,221 @@
-.nav_container {
+.wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--nav-width);
+    background: var(--sidebar-popup-bg);
+    &.playerControls {
+        height: calc(100vh - var(--playerControls-height));
+    }
+}
+
+.logo {
+    width: 240px;
+    height: 70px;
+}
+
+.action-Btn {
+    text-align: start;
+    padding: 10px 25px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    &:hover {
+        background-color: var(--alpha-bg);
+        color: var(--text-item-hover);
+    }
+}
+
+.library {
+    flex-grow: 1;
+    .libraryTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 26px;
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        padding: 30px 25px;
+        font-weight: 700;
+        .libraryTitleIcon {
+            display: none;
+            border-radius: 50%;
+            background: var(--alpha-bg);
+            padding: 7px;
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        .libraryTitleIcon {
+            display: block;
+        }
+    }
+
+    .library-Btn {
+        padding: 6px 25px;
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--navigation-text);
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+.add-play-list {
+    display: flex;
+    align-items: center;
+    padding: 0 0 12px 0;
+    .add-play-list-button {
+        width: 100%;
+        height: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: start;
+        padding: 12px 28px;
+        color: var(--text-primary);
+        &:hover {
+            color: var(--text-item-hover);
+            opacity: 0.8;
+        }
+    }
+}
+
+.playListModal {
     position: fixed;
     top: 0;
     left: 0;
-    height: calc(100vh - var(--playerControls-height));
-    width: var(--nav-width);
-    background: var(--sidebar-popup-bg);
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .private-library {
+        width: 500px;
+        max-width: 80vw;
+        .private-title {
+            font-size: 1.8rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+        .private-subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+
+            &:hover {
+                .action-btn {
+                    color: var(--link-text-hover);
+                }
+            }
+        }
+
+        .action-btn {
+            transition: all 0.15s ease;
+        }
+
+        .privateCheckBox {
+            position: relative;
+            appearance: none;
+            border-radius: 4px;
+            padding: 9px;
+            margin-right: 15px;
+            background-color: var(--purple-primary);
+            border-color: var(--purple-primary);
+            &:checked {
+                &::after {
+                    content: ' ';
+                    border-left-color: #fff;
+                    border-bottom: 2px solid #fff;
+                    border-right: 2px solid #fff;
+                    border-top-color: #fff;
+                    height: 47%;
+                    width: 20%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -63%) rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .module {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background: var(--primary-bg);
+        padding: 24px 20px;
+        border-radius: 10px;
+
+        .closeBtn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: var(--text-primary);
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            opacity: 0.8;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .heading {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            text-align: center;
+            width: 100%;
+        }
+        .playlistInput {
+            width: 100%;
+            height: 40px;
+            width: 100%;
+            border-radius: 999px;
+            border: 1px solid var(--border-primary);
+            background-color: var(--alpha-bg);
+            padding: 0 15px;
+            font-size: 14px;
+            margin-top: 15px;
+            color: var(--text-primary);
+            &:focus {
+                outline: none;
+            }
+        }
+        .playListBtn {
+            justify-content: center;
+            width: 100%;
+            background: var(--purple-primary);
+            color: var(--text-primary);
+            border-radius: 999px;
+            font-size: 1.4rem;
+            padding: 9px 10px;
+            margin-top: 15px;
+        }
+
+        .playListSwitch {
+            margin-top: 15px;
+            width: 100%;
+        }
+    }
 }

@@ -14,6 +14,9 @@ const Button = forwardRef(
             rightIcon,
             subtitle,
             className,
+            rightIconHover,
+            leftIconClass,
+            rightIconClass,
             disabled = false,
             primary = false,
             round = false,
@@ -53,17 +56,23 @@ const Button = forwardRef(
         // console.log(rightIcon)
         return (
             <Comp className={classes} {...props} ref={ref}>
-                {leftIcon && !subtitle && <span className={cx('Icon', { leftIcon: !!children })}>{leftIcon}</span>}
+                {leftIcon && !subtitle && (
+                    <span className={cx('Icon', { leftIcon: !!children, [leftIconClass]: leftIconClass })}>
+                        {leftIcon}
+                    </span>
+                )}
                 {children && !subtitle && <span className={cx('children')}>{children}</span>}
                 {rightIcon && !subtitle && (
-                    <span className={(cx('Icon'), { leftIcon: !!children })}>
+                    <span className={cx('Icon', { leftIcon: !!children, [leftIconClass]: leftIconClass })}>
                         {rightIcon === 'switchIcon' ? (
                             <label className={cx('switch')}>
                                 <input type="checkbox" />
-                                <span className={cx('slider', 'round')}></span>
+                                <span className={cx('slider')}></span>
                             </label>
                         ) : (
-                            rightIcon
+                            <div className={cx('right', { rightIconHover, [rightIconClass]: rightIconClass })}>
+                                {rightIcon}
+                            </div>
                         )}
                     </span>
                 )}
@@ -73,7 +82,18 @@ const Button = forwardRef(
                             <h4 className={cx('title')}>{children}</h4>
                             <span className={cx('sub-title')}>{subtitle}</span>
                         </div>
-                        <div className={cx('right')}>{rightIcon}</div>
+                        <div className={cx('right', { rightIconHover, [rightIconClass]: rightIconClass })}>
+                            {rightIcon === 'switchIcon' ? (
+                                <label className={cx('switch')}>
+                                    <input type="checkbox" />
+                                    <span className={cx('slider')}></span>
+                                </label>
+                            ) : (
+                                <div className={cx('right', { rightIconHover, [rightIconClass]: rightIconClass })}>
+                                    {rightIcon}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 )}
             </Comp>

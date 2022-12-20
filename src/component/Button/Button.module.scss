@@ -3,20 +3,48 @@
     border: none;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: cen//ter;
     padding: 4px 17px;
     color: var(--while);
     font-size: 1.8rem;
     font-family: var(--font-style);
-    transition: all 0.1s ease;
+    transition: all 0.15s ease;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+
+    &:hover .right.rightIconHover {
+        opacity: 0.6;
+    }
+
+    .right {
+        &.rightIconHover {
+            opacity: 0;
+        }
+        &.rightIconHover:hover {
+            opacity: 0.9;
+        }
+    }
+    .iSize17 {
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .iSize20 {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .iSize24 {
+        font-size: 2.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .children {
     flex-grow: 1;
-    text-align: left;
 }
 
 .primary {
@@ -27,7 +55,11 @@
 }
 
 .round {
+    width: 40px;
+    height: 40px;
     padding: 9px 9px;
+    justify-content: center;
+
     background: var(--alpha-bg);
     border-radius: 50%;
     :hover {
@@ -79,6 +111,10 @@
     background-color: #ccc;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    border-radius: 34px;
+    &:before {
+        border-radius: 50%;
+    }
 }
 
 .slider:before {
@@ -108,20 +144,15 @@ input:checked + .slider:before {
 }
 
 /* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 
 .flex-box {
+    width: 100%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     text-align: start;
     .left {
+        flex-grow: 1;
         .title {
             font-size: 1.4rem;
             font-weight: 600;
@@ -133,5 +164,6 @@ input:checked + .slider:before {
         }
     }
     .right {
+        margin-left: 12px;
     }
 }

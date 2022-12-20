@@ -10,22 +10,9 @@ function Menu({ children, data = [], hideOnClick = false, offset = [12, 8], clas
     const [mount, setMount] = useState(false);
     const renderData = (data) => {
         return data.map((item, index) => {
-            return item.borderTop ? (
-                <div className={cx('last-container')} key={index}>
-                    <MenuItem
-                        key={index}
-                        subtitle={item.subtitle}
-                        leftIcon={item.leftIcon}
-                        rightIcon={item.rightIcon}
-                        placement={item.placement}
-                        data={item.child}
-                        className={cx('btn')}
-                    >
-                        {item.title}
-                    </MenuItem>
-                </div>
-            ) : (
+            return (
                 <MenuItem
+                    borderTop={item.borderTop}
                     className={cx('btn')}
                     key={index}
                     subtitle={item.subtitle}

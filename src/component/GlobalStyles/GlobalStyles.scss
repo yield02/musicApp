@@ -4,20 +4,30 @@
     --primary-bg: #274a78;
     --layout-bg: #1d375a;
     --alpha-bg: hsla(0, 0%, 100%, 0.1);
+    --player-bg: #172f4f;
     --sidebar-popup-bg: #2a4162;
     --alpha-layout-bg: rgba(29, 55, 90, 0.8);
     --queue-player-popup-bg: #0b274c;
     --blur-queue-bg: rgba(29, 55, 90, 0.9019607843137255);
     --chart-bg-img-alpha: rgba(29, 55, 90, 0.9);
     --linear-gradient-bg: linear-gradient(180deg, #224472, #244572);
+
     --while: #ffff;
+
+    --purple-primary: #3b68ef;
+    --link-text-hover: #429eff;
+    --navigation-text: #dadada;
     --text-item-hover: #fff;
     --text-primary: #fff;
+    --player-text: #fff;
     --text-secondary: hsla(0, 0%, 100%, 0.5);
-    --border-primary: hsla(0, 0%, 100%, 0.1);
     --search-text: #eee;
+
+    --border-primary: hsla(0, 0%, 100%, 0.1);
+
     --nav-width: 240px;
     --playerControls-height: 90px;
+    --padding-section: 59px;
     --font-style: 'mp3Font', sans-serif;
 }
 
@@ -33,6 +43,11 @@ html {
 
 body {
     font-family: var(--font-style);
+    transition: all 0.25s ease;
+}
+
+a[href] {
+    text-decoration: none;
 }
 
 @font-face {

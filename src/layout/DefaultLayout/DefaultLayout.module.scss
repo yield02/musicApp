@@ -1,5 +1,16 @@
-.zm-box {
+.default-container {
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
     background: var(--layout-bg);
-    width: 100vw;
-    height: 100vh;
+    height: 1500px;
+}
+
+.zm-box {
+    margin-top: 70px;
+    margin-left: var(--nav-width);
+    flex-grow: 1;
+    padding: 0 var(--padding-section);
 }
