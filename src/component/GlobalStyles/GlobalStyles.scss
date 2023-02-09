@@ -11,7 +11,8 @@
     --blur-queue-bg: rgba(29, 55, 90, 0.9019607843137255);
     --chart-bg-img-alpha: rgba(29, 55, 90, 0.9);
     --linear-gradient-bg: linear-gradient(180deg, #224472, #244572);
-
+    --bg-content-color: #ffffff1a;
+    --tab-active-bg: hsla(0, 0%, 100%, 0.3);
     --while: #ffff;
 
     --purple-primary: #3b68ef;
@@ -24,6 +25,9 @@
     --search-text: #eee;
 
     --border-primary: hsla(0, 0%, 100%, 0.1);
+
+    --box-shadow-queue: 0 1px 0 rgba(0, 0, 0, 0.3), 0 1px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(25, 255, 255, 0.05);
 
     --nav-width: 240px;
     --playerControls-height: 90px;

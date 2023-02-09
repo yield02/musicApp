@@ -1,0 +1,147 @@
+.player-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .played-btn {
+        position: relative;
+        margin: 0 7px;
+        line-height: 0;
+        padding: 3px;
+        font-size: 2rem;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        &.active {
+            color: var(--link-text-hover);
+        }
+        &:hover {
+            background: hsla(0, 0%, 100%, 0.1);
+            .repeat {
+                background: hsla(0, 0%, 100%, 0.1);
+            }
+        }
+        .repeat {
+            position: absolute;
+            font-size: 1rem;
+            top: 12px;
+            left: 9px;
+            border-radius: 50%;
+            padding: 0;
+        }
+    }
+    .play-action {
+        font-size: 3.9rem;
+        position: relative;
+        &:hover {
+            color: var(--link-text-hover);
+        }
+        .Spinner {
+            position: absolute;
+            font-size: 2rem;
+            top: 17.5px;
+            left: 27px;
+            background: var(--player-bg);
+            animation: turnAround 1.2s linear infinite;
+            @keyframes turnAround {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+
+.played-duration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .start-time {
+        font-size: 1.2rem;
+        color: var(--player-text);
+        font-weight: 600;
+        opacity: 0.5;
+    }
+
+    .end-time {
+        font-size: 1.2rem;
+        color: var(--player-text);
+        font-weight: 600;
+    }
+
+    .process-track {
+        position: relative;
+        flex-grow: 1;
+        height: 3px;
+        border-radius: 20px;
+        background: var(--bg-content-color);
+        margin: 0 12px;
+
+        .played-input {
+            width: 100%;
+            opacity: 1;
+            z-index: 5;
+            height: 18px;
+            outline: none;
+            cursor: pointer;
+            border-radius: 2px;
+            will-change: opacity;
+            -webkit-appearance: none;
+            -webkit-transition: 0.2s;
+            transition: opacity 0.2s;
+            background-color: transparent;
+            -webkit-tap-highlight-color: transparent;
+            top: -7px;
+            left: 0;
+            right: 0;
+            position: absolute;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                opacity: 0;
+                width: 12px;
+                height: 12px;
+                background: #fff;
+                border-radius: 50%;
+            }
+        }
+        &:hover {
+            height: 5px;
+            .played-input {
+                &::-webkit-slider-thumb {
+                    opacity: 1;
+                }
+            }
+            .process-track-update {
+                height: 5px;
+            }
+        }
+        .process-track-update {
+            // width: 100%;
+            top: 0px;
+            height: 3px;
+            border-radius: 20px;
+            position: absolute;
+            background-color: var(--text-item-hover);
+            &:hover {
+                &:after {
+                    content: '';
+                    top: 49.9%;
+                    right: 0;
+                    width: 12px;
+                    height: 12px;
+                    display: none;
+                    border-radius: 50%;
+                    position: absolute;
+                    transform: translate(50%, -50%);
+                    background-color: var(--text-item-hover);
+                }
+            }
+        }
+    }
+}

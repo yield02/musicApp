@@ -3,6 +3,7 @@
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 100;
     height: var(--playerControls-height);
     border-top: 1px solid var(--border-primary);
     background: var(--player-bg);
@@ -14,8 +15,9 @@
 
     .left {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+        width: 30%;
         .media-img {
             width: 64px;
             height: 64px;
@@ -23,12 +25,32 @@
             margin-right: 10px;
         }
         .media-infor {
-            text-overflow: clip;
-            overflow: visible;
             display: flex;
+            flex-basis: auto;
+            text-overflow: clip;
             justify-content: center;
             align-items: flex-start;
             flex-direction: column;
+            overflow: hidden;
+            .media-content {
+                display: inline-flex;
+                max-width: 160px;
+                .title-wrapper {
+                    display: inline-flex;
+                    white-space: nowrap;
+                    animation: key-slide 8s linear infinite;
+                }
+
+                @keyframes key-slide {
+                    from {
+                        transform: translateX(0%);
+                    }
+                    to {
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+
             .media-title {
                 font-size: 1.4rem;
                 font-weight: 600;
@@ -38,6 +60,10 @@
                 color: var(--player-text);
                 text-transform: none;
             }
+            .media-title:first-child {
+                margin-right: 50%;
+            }
+
             .media-subtile {
                 margin-top: 1px;
                 color: var(--text-secondary);
@@ -49,6 +75,7 @@
                 line-height: normal;
             }
         }
+
         .media-icon {
             color: var(--player-text);
             font-size: 1.6rem;
@@ -64,12 +91,132 @@
         }
     }
     .mid {
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
+        flex-direction: column;
     }
     .right {
-        justify-content: center;
+        display: flex;
+        justify-content: end;
         align-items: center;
+        width: 30%;
+
+        .actionBtn {
+            padding: 4px 6px;
+            margin: 0 3px;
+            font-size: 1.6rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            &:hover {
+                background: var(--border-primary);
+            }
+        }
+
+        .music-volume {
+            display: inline-flex;
+
+            &:hover {
+                .process-track {
+                    height: 5px !important;
+                }
+                .played-input {
+                    &::-webkit-slider-thumb {
+                        opacity: 1 !important;
+                    }
+                }
+                .process-track-update {
+                    height: 5px !important;
+                }
+            }
+
+            .played-volume {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 75px;
+
+                &.isMute {
+                    opacity: 0.5;
+                }
+
+                .process-track {
+                    position: relative;
+                    flex-grow: 1;
+                    height: 3px;
+                    border-radius: 20px;
+                    background: var(--bg-content-color);
+
+                    .played-input {
+                        width: 100%;
+                        opacity: 1;
+                        z-index: 5;
+                        height: 18px;
+                        outline: none;
+                        cursor: pointer;
+                        border-radius: 2px;
+                        will-change: opacity;
+                        -webkit-appearance: none;
+                        -webkit-transition: 0.2s;
+                        transition: opacity 0.2s;
+                        background-color: transparent;
+                        -webkit-tap-highlight-color: transparent;
+                        top: -7px;
+                        left: 0;
+                        right: 0;
+                        position: absolute;
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            opacity: 0;
+                            width: 12px;
+                            height: 12px;
+                            background: #fff;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .process-track-update {
+                        // width: 100%;
+                        top: 0px;
+                        height: 3px;
+                        border-radius: 20px;
+                        position: absolute;
+                        background-color: var(--text-item-hover);
+                        &:hover {
+                            &:after {
+                                content: '';
+                                top: 49.9%;
+                                right: 0;
+                                width: 12px;
+                                height: 12px;
+                                display: none;
+                                border-radius: 50%;
+                                position: absolute;
+                                transform: translate(50%, -50%);
+                                background-color: var(--text-item-hover);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .divide {
+            display: block;
+            height: 33px;
+            width: 1px;
+            background: var(--border-primary);
+            margin: 0 20px;
+        }
+        .musicList-Btn {
+            font-size: 2.4rem;
+            padding: 0;
+            &.active {
+                color: var(--link-text-hover);
+            }
+        }
     }
 }

@@ -23,10 +23,7 @@
     width: 100%;
     font-size: 1.3rem;
     font-weight: 600;
-    &:hover {
-        background-color: var(--alpha-bg);
-        color: var(--text-item-hover);
-    }
+    // opacity: 0.8;
 }
 
 .library {

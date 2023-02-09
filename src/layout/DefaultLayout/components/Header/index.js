@@ -143,7 +143,7 @@ function Header() {
                 <Menu key={1} data={avatar}>
                     <Image
                         className={cx('avatar')}
-                        src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/273111333_2180786728742326_4129928184771592829_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DHV1XKOUzRQAX-SCewr&_nc_ht=scontent.fsgn2-4.fna&oh=00_AfCJdE-mV_9AcJmlHLvyI2JH-SXpLixLnj8fryqxBbpW3A&oe=6395ABE3"
+                        src="https://image-us.24h.com.vn/upload/3-2018/images/2018-07-22/1532264093-388-153224914634392-thumbnail.jpg"
                     ></Image>
                 </Menu>
             </div>

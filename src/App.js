@@ -20,6 +20,7 @@ function App() {
 
                         return (
                             <Route
+                                index={route.index}
                                 key={index}
                                 path={route.path}
                                 element={

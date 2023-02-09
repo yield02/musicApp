@@ -15,7 +15,6 @@ const MenuItem = forwardRef(
             children,
             borderTop,
             leftIcon,
-            active,
             subtitle,
             rightIcon,
             data = [],
@@ -30,7 +29,7 @@ const MenuItem = forwardRef(
         ref,
     ) => {
         return (
-            <div className={cx('wrapper', { active, borderTop })}>
+            <div className={cx('wrapper', { borderTop })}>
                 {data.length > 0 ? (
                     <Menu data={data} offset={[0, 0]} placement={placement}>
                         <Button

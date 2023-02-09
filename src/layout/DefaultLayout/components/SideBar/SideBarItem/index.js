@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function SideBarItem({ children, to }) {
+function SideBarItem({ children, to, borderTop }) {
     return (
-        <NavLink className={(nav) => cx('SideBarItem', { active: nav.isActive })} to={to}>
-            {children}
+        <NavLink className={(nav) => cx('SideBarItem', { active: nav.isActive, borderTop })} to={to}>
+            <div className={cx('chil')}>{children}</div>
         </NavLink>
     );
 }

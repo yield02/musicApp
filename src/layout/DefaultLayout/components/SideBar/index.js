@@ -25,6 +25,7 @@ import ModalBox from '~/component/ModalBox';
 import Button from '~/component/Button';
 import { publicRoutes } from '~/routes';
 import SideBarItem from './SideBarItem';
+import Tippy from '@tippyjs/react';
 const cx = classNames.bind(styles);
 
 const actionBtns = [
@@ -64,8 +65,8 @@ const actionBtns = [
     {
         leftIcon: <NewMusicIcon></NewMusicIcon>,
         title: 'Nhạc mới',
-        borderTop: true,
         to: publicRoutes[5].path,
+        borderTop: true,
     },
     {
         leftIcon: <TypeMusicIcon></TypeMusicIcon>,
@@ -107,11 +108,11 @@ const library = [
 ];
 
 function SideBar({ playerControls }) {
-    console.log({ playerControls: playerControls });
     const [moduleMount, setModuleMount] = useState(false);
     const [playListValue, setPlayListValue] = useState('');
     const [libraryValue, setLibraryValue] = useState(library);
     const [privateLibrary, setPrivateLibrary] = useState(false);
+
     return (
         <div className={cx('wrapper', { playerControls: playerControls })}>
             <Image
@@ -119,11 +120,9 @@ function SideBar({ playerControls }) {
                 src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.18169-9/13263679_651169215037426_5666160671602828234_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=19026a&_nc_ohc=FG4gdrG_lMMAX864Q96&_nc_oc=AQl192_Cm2iBF_OP1fompYl6s0GnHgm_8lJNoTxX3-c2KJOcxUGSJmjgghuKPY4NXCpjegkOlZ4qN2mwZ-gNaG5R&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfC_E0ZXW4yHkl0abA4G3SKELp3AuQXOJXe8qHba_77nyQ&oe=63BF6EED"
             ></Image>
             {actionBtns.map((item, index) => (
-                <SideBarItem key={index} to={item.to}>
+                <SideBarItem key={index} to={item.to} borderTop={item.borderTop}>
                     <MenuItem
                         className={cx('action-Btn')}
-                        borderTop={item.borderTop}
-                        active={item.active}
                         leftIconClass={'iSize17'}
                         rightIconClass={'iSize20'}
                         leftIcon={item.leftIcon}
@@ -188,15 +187,15 @@ function SideBar({ playerControls }) {
                             </div>
                         )}
                     >
-                        {/* <Tippy content="Chỉnh sửa" placement="top"> */}
-                        <FontAwesomeIcon
-                            className={cx('libraryTitleIcon')}
-                            onClick={() => {
-                                setPrivateLibrary(true);
-                            }}
-                            icon={faPenClip}
-                        ></FontAwesomeIcon>
-                        {/* </Tippy> */}
+                        <Tippy content="Chỉnh sửa" placement="top">
+                            <FontAwesomeIcon
+                                className={cx('libraryTitleIcon')}
+                                onClick={() => {
+                                    setPrivateLibrary(true);
+                                }}
+                                icon={faPenClip}
+                            ></FontAwesomeIcon>
+                        </Tippy>
                     </ModalBox>
                 </h3>
                 {libraryValue.map((item, index) => {
@@ -205,7 +204,6 @@ function SideBar({ playerControls }) {
                             <MenuItem
                                 className={cx('library-Btn')}
                                 borderTop={item.borderTop}
-                                active={item.active}
                                 key={index}
                                 leftIconClass={'iSize17'}
                                 rightIconClass={'iSize20'}
